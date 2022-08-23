@@ -1,0 +1,37 @@
+[
+    {
+        "firstName": "Travis",
+        "lastName": "Micheletti",
+        "email": "travis@testemail.com",
+        "newUser": true,
+        "userType":"Timekeeper"
+    },
+    {
+        "firstName": "Sovelj",
+        "lastName": "Pucket",
+        "email": "solvej@testemail.com",
+        "newUser": true,
+        "userType": "Admin"
+    },
+    {
+        "firstName": "Matt",
+        "lastName": "Micheletti",
+        "email": "matt@testemail.com",
+        "newUser": true,
+        "userType": "Supervisor"
+    },
+    {
+        "firstName": "Cameron",
+        "lastName": "Micheletti",
+        "email": "cam@testemail.com",
+        "newUser": true,
+        "userType": "Admin"
+    },
+    {
+        "firstName": "Deion",
+        "lastName": "Sanders",
+        "email": "deion@testemail.com",
+        "newUser": true,
+        "userType": "Supervisor"
+    }
+]
