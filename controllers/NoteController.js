@@ -18,11 +18,23 @@ router.post('/', async (req, res, next) => {
     }
 })
 
+
 // Read all - get all notes
 router.get('/', async(req, res, next) => {
     try {
         const notes = await Note.find({})
         res.json(notes)
+    } catch(err) {
+        next(err)
+    }
+})
+
+// Read one note
+
+router.get('/:id', async(req, res, next) => {
+    try {
+        const note = await Note.findById(req.params.id)
+        res.json(note)
     } catch(err) {
         next(err)
     }
@@ -44,6 +56,7 @@ router.put('/:id', async (req, res, next) => {
     }
 })
 
+
 // Delete - Delete a note 
 router.delete('/:id', async (req, res, next) =>  {
     try {
@@ -53,3 +66,5 @@ router.delete('/:id', async (req, res, next) =>  {
         next(err)
     }
 })
+
+module.exports = router

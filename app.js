@@ -49,11 +49,16 @@ app.get('/home', requiresAuth(), (req, res) => {
     console.log(req.oidc.user)
 })
 
+// Controllers
+
 const usersController = require('./controllers/UserController')
 app.use('/users', usersController)
 
 const employeesController = require('./controllers/EmployeeController')
 app.use('/employees', employeesController)
+
+const notesController = require('./controllers/NoteController')
+app.use('/notes', employeesController)
 
 // Handle Errors
 
