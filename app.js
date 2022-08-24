@@ -3,9 +3,11 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const express = require('express')
 const app = express()
+// const cors = require('cors')
 const { auth, requiresAuth } = require('express-openid-connect')
 require('dotenv').config()
 require('./db/connection')
+
 
 // config variable for auth
 const config = {
@@ -30,6 +32,8 @@ app.use(express.urlencoded({ extended: true }))
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
+// app.use(cors())
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Routes
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,6 +49,11 @@ app.get('/home', requiresAuth(), (req, res) => {
     console.log(req.oidc.user)
 })
 
+const usersController = require('./controllers/UserController')
+app.use('/users', usersController)
+
+const employeesController = require('./controllers/EmployeeController')
+app.use('/employees', employeesController)
 
 // Handle Errors
 
