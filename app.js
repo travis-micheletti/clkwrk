@@ -19,7 +19,7 @@ const config = {
     issuerBaseURL: process.env.ISSUER_BASE_URL
   };
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8000
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Middleware
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,7 +58,7 @@ const employeesController = require('./controllers/EmployeeController')
 app.use('/employees', employeesController)
 
 const notesController = require('./controllers/NoteController')
-app.use('/notes', employeesController)
+app.use('/notes', notesController)
 
 // Handle Errors
 

@@ -2,8 +2,11 @@ const mongoose = require ('../db/connection')
 
 const NoteSchema = new mongoose.Schema(
     {
-        date: Date.now,
-        employee: Object,
+        date: {
+            type: Date,
+            default: Date.now,
+        },
+        employee: mongoose.ObjectId,
         type: String,
         comment: String,
         author: {
