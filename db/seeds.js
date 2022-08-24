@@ -13,6 +13,8 @@ Employee.deleteMany({})
         process.exit()
     })
 
+
+    // got everything seeded - unsure why i have to comment out the user section to have employees seeded but it's working now
 User.deleteMany({})
     .then(() => {
         return User.insertMany(userSeeds)
