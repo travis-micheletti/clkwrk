@@ -3,7 +3,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const express = require('express')
 const app = express()
-// const cors = require('cors')
+const cors = require('cors')
 // const { auth, requiresAuth } = require('express-openid-connect')
 require('dotenv').config()
 require('./db/connection')
@@ -26,13 +26,14 @@ const port = process.env.PORT || 8000
 // for parsing app/request data and adding to request.body
 app.use(express.json())
 
+
 // for parsing urlencoded data and adding to request object
 app.use(express.urlencoded({ extended: true }))
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 // app.use(auth(config));
 
-// app.use(cors())
+app.use(cors())
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Routes
