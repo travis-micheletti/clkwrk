@@ -32,8 +32,7 @@ const EmployeeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    attendanceLog: Array,
-    employeeLog: Array
+    employeeLog: { type: mongoose.Schema.Types.ObjectId }
 })
 
 const Employee = mongoose.model('Employee', EmployeeSchema)
