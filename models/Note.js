@@ -6,7 +6,7 @@ const NoteSchema = new mongoose.Schema(
             type: Date,
             default: Date.now,
         },
-        employee: mongoose.ObjectId,
+        employee: String,
         type: String,
         comment: String,
         author: {
