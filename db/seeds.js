@@ -15,12 +15,12 @@ Employee.deleteMany({})
 
 
     // got everything seeded - unsure why i have to comment out the user section to have employees seeded but it's working now
-User.deleteMany({})
-    .then(() => {
-        return User.insertMany(userSeeds)
-    })
-    .then(console.log)
-    .catch(console.error)
-    .finally(() => {
-        process.exit()
-    })
+// User.deleteMany({})
+//     .then(() => {
+//         return User.insertMany(userSeeds)
+//     })
+//     .then(console.log)
+//     .catch(console.error)
+//     .finally(() => {
+//         process.exit()
+//     })

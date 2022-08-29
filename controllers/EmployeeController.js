@@ -38,7 +38,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
-// Update - Update one user
+// Update - Update one employee
 router.put('/:id', async (req, res, next) => {
     try {
         const updateEmployee = await Employee.findByIdAndUpdate(
@@ -54,7 +54,7 @@ router.put('/:id', async (req, res, next) => {
     }
 })
 
-// Delete - Delete User 
+// Delete - Delete employee 
 router.delete('/:id', async (req, res, next) =>  {
     try {
         const deleteEmployee = await Employee.findByIdAndDelete(req.params.id)
